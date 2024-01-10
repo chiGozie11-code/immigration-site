@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="/css/adim.css">
+</head>
+<body>
+
+  <header>
+    <h1>Adim Dashboard</h1>
+  </header>
+
+  <nav>
+    <a href="/index.html">Home</a>
+    <a href="#" onclick="showPage('dashboard')">User details</a>
+    <a href="#" onclick="showPage('profile')">Payment Receipt</a>
+  </nav>
+
+  <section id="dashboard">
+    <!-- <h2>Welcome to the Dashboard!</h2>
+    <p>This is your personalized dashboard content.</p> -->
+    <div class="card" id="payment">
+        <div class="prices">
+            
+            <table id="customers">
+              <tr>
+                <th>First Name</th>
+                <th>Second Name</th>
+                <th>Email</th>
+                <th>Phone-number</th>
+                <th>date-of-birth</th>
+                <th>Picture</th>
+                <th>Gender</th>
+                <th>payment-proof</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td ></td>
+                <td></td>
+                <td></td>
+                <td ></td>
+                <td></td>
+                <td></td>
+                
+                
+              </tr>
+              
+              
+            </table>
+            <div id="overlay"></div>
+  </section>
+
+  <section id="profile" style="display:none;">
+    <div class="payment-rep"></div>
+  </section>
+
+  
+  <footer>
+    &copy; 2024 User Dashboard
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      // Hide all sections
+      document.querySelectorAll('section').forEach(section => {
+        section.style.display = 'none';
+      });
+
+      // Show the selected section
+      document.getElementById(pageId).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

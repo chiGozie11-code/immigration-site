@@ -1,0 +1,380 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.section {
+  display: flex;
+}
+.header {
+  background-color:black;
+  padding: 10px;
+}
+.logo img {
+  height: 80px;
+  cursor: pointer;
+}
+ul li {
+  list-style: none;
+  margin: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+li {
+  font-size: 20px;
+  margin: 20px;
+  color: white;
+}
+li:hover {
+  background-color:red;
+}
+li a {
+  text-decoration: none;
+  color: white;
+}
+.main-card {
+  background-color: white;
+  width: 100%;
+  /* height: 100vh; */
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.card {
+  border-radius: 10px;
+  margin: 10px;
+  width: 500px;
+  /* height: 300px; */
+  background-color: white;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.to-pay {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  /* width: 400px; */
+  /* height: 400px; */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.wallet-btn {
+  padding: 10px;
+}
+button {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+.btn-opts {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+#okButton {
+  border: none;
+  background-color: #4caf50;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #fff;
+  font-weight: 600;
+}
+
+#cancelButton {
+  border: none;
+  background-color: #f44336;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #fff;
+  font-weight: 600;
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+.payment-proof {
+  background-color: #1c2542;
+  text-align: center;
+  color: #f44336;
+  max-width: 100%;
+  padding: 30px;
+  /* height: 300px; */
+  border-radius: 10px;
+}
+
+
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.ham {
+  display: none;
+  padding: 2px;
+  cursor: pointer;
+  position: relative;
+  top: 10px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  display: block;
+  width: 35px;
+  height: 2px;
+  margin: 5px auto;
+  background-color: white;
+  transition: 0.4s;
+  position: relative;
+  top: 0px;
+}
+.closebtn {
+  display: none;
+  color: black;
+  font-size: 40px;
+  cursor: pointer;
+  position: relative;
+  left: 50px;
+
+}
+
+header {
+  background-color: #4caf50;
+  color: white;
+  width: 100%;
+  /* height: 10px; */
+  text-align: center;
+}
+header h1 {
+  padding: 10px;
+}
+.countries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.country {
+  display: grid;
+  justify-content: center;
+  width: 500px;
+  padding: 10px;
+  height: 200px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  margin: 10px;
+}
+.pay {
+  background-color: #04AA6D;
+  padding: 10px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+}
+.copyIcon {
+  background-color: #4caf50;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  position: relative;
+  top: 5px;
+}
+.copyIcon-one {
+  background-color: #4caf50;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.copyIcon-two {
+  background-color: #4caf50;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.copyIcon-three {
+  background-color: #4caf50;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.copyIcon-four {
+  background-color: #4caf50;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.payment-content {
+  /* margin: 10px; */
+  /* background-color: red; */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  
+}
+.diplay {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  header {
+    background-color: blue;
+    width: 100%;
+    height: 100px;
+    display: none;
+  }
+  .ham {
+    display: block;
+    padding: 2px;
+    cursor: pointer;
+  } 
+  .nav {
+    display: none;
+  }
+  .header {
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+  }
+  .main-card {
+    position: relative;
+    top: 150px;
+    /* background-color: whitesmoke; */
+    width: 100%;
+    /* height: 100vh; */
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+  .countries {
+    /* position: relative;
+    top: 300px; */
+    /* padding-top: 200px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+  .country {
+    display: grid;
+    justify-content: center;
+    width: 350px;
+    padding: 10px;
+    height: 200px;
+    background-color:whitesmoke;
+    border-radius: 5px;
+    margin: 10px;
+  }
+  #popup {
+    display: none;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    /* width: 400px; */
+    /* height: 400px; */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+  .copyIcon {
+    margin: 30px;
+  }
+}

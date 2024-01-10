@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/userDasbord.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1> Hi welcome to your Dashboard</h1>
+    </header>
+    <div class="section">
+        <div class="header">
+            <div class="logo">
+                <a href="/index.html"><img src="/img/immigration-logo.png"></a>
+            </div>
+            <div class="ham" onclick="openNav()">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
+            </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="/adim.html">About</a>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>Overview</li>
+                    <li id="countrie"><a href="/index.html">home</a></li>
+                    <li id="settings-btn"><a href="/adim.html">adim</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-card">
+            
+        
+
+            <div class="countries">
+                <div class="country">
+                    <table id="customers">
+                        <tr>
+                          <th>Country we offer visa to</th>
+                          <th>Visa fee</th>
+                        </tr>
+                        <tr>
+                          <td>Canada</td>
+                          <td>$1,750</td>
+                        </tr>
+                        </table>
+                        <button onclick="openPopup()" class="pay">click to pay</button>
+                        <div id="overlay"></div>
+
+                        <div id="popup">
+                          <div class="payment-content">
+                            <h2>Select method of payment</h2>
+                             <h2>USDT</h2>
+                             <p>Network: Tron (TRC20)</p>
+                             <label>Wallet address:</label>
+                             <button id="copyButton" onclick="copyTextToClipboard()" class="wallet-btn">TC9wXZ6Z9dWZcyuHS4U9AGSc2HCEt7ybrR </button><span class="copyIcon" onclick="copyTextToClipboard()"><i class="fa-regular fa-copy"></i></span>
+                          </div>
+                          <div class="payment-content">
+                             <h2>BTC</h2>
+                             <p>Network: Bitcoin</p>
+                             <label>Wallet address:</label>
+                             <button onclick="copyTextToClipboardone()" class="wallet-btn">1MB9kbWANGFp9hE62r1DZkozCRJ9vriCtF </button><span class="copyIcon-one" onclick="copyTextToClipboardone()"><i class="fa-regular fa-copy"></i></span>
+                          </div>
+                          <div class="payment-content">
+                             <h2>ETHERIUM</h2>
+                             <p>Network: BNB smart chain ( BEP20)</p>
+                             <label>Wallet address:</label>
+                             <button onclick="copyTextToClipboardtwo()" class="wallet-btn">0x12450fe6888a98914f3f32f708d120a4033c0be7 </button><span class="copyIcon-two" onclick="copyTextToClipboardtwo()"><i class="fa-regular fa-copy"></i></span>
+                          </div>
+                          <div class="payment-content">
+                            <h2>BNB</h2>
+                            <p>Network: BNB Smart chain (BEP20)</p>
+                            <label>Wallet address:</label>
+                            <button onclick="copyTextToClipboardthree()" class="wallet-btn">0x12450fe6888a98914f3f32f708d120a4033c0be7 </button><span class="copyIcon-three" onclick="copyTextToClipboardthree()"><i class="fa-regular fa-copy"></i></span>
+                         </div>
+                         <div class="payment-content">
+                            <h2>Tron</h2>
+                            <p>Network: Tron (TRC20)</p>
+                            <label>Wallet address:</label>
+                            <button onclick="copyTextToClipboardfoue()" class="wallet-btn">TC9wXZ6Z9dWZcyuHS4U9AGSc2HCEt7ybrR</button><span class="copyIcon-four" onclick="copyTextToClipboardfoue()"><i class="fa-regular fa-copy"></i></span>
+                         </div>
+
+                          
+                          <div class="btn-opts">
+                            <button id="okButton" onclick="closePopup()">OK</button>
+                          <button id="cancelButton" onclick="closePopup()">Cancel</button>
+                          </div>
+                        </div>
+
+                </div>
+                
+                <div class="country">
+                    <table id="customers">
+                        <tr>
+                          <th>Country we offer visa to</th>
+                          <th>Visa fee</th>
+                        </tr>
+                        <tr>
+                            <td>USA</td>
+                            <td>$1,700</td>
+                        </tr>
+                        </table>
+                        <button onclick="openPopup()">click to pay</button>
+                        <div id="overlay"></div>
+
+                        <div id="popup">
+                          <p>Select method of payment</p>
+                          
+                          <button id="okButton" onclick="closePopup()">OK</button>
+                          <button id="cancelButton" onclick="closePopup()">Cancel</button>
+                        </div>
+                </div>
+                <div class="country">
+                    <table id="customers">
+                        <tr>
+                          <th>Country we offer visa to</th>
+                          <th>Visa fee</th>
+                        </tr>
+                        <tr>
+                            <td>United Kingdom </td>
+                            <td>$1,550</td>
+                        </tr>
+                        </table>
+                        <button onclick="openPopup()">click  to pay</button>
+                        <div id="overlay"></div>
+
+                        <div id="popup">
+                          <p>Select method of payment</p>
+                          
+                          <button id="okButton" onclick="closePopup()">OK</button>
+                          <button id="cancelButton" onclick="closePopup()">Cancel</button>
+                        </div>
+                </div>
+                <div class="country">
+                    <table id="customers">
+                        <tr>
+                          <th>Country we offer visa to</th>
+                          <th>Visa fee</th>
+                        </tr>
+                        <tr>
+                            <td>Dubai</td>
+                            <td> $1,500</td>
+                        </tr>
+                        </table>
+                        <button onclick="openPopup()">click to pay</button>
+                        <div id="overlay"></div>
+
+                        <div id="popup">
+                          <p>Select method of payment</p>
+                          
+                          <button id="okButton" onclick="closePopup()">OK</button>
+                          <button id="cancelButton" onclick="closePopup()">Cancel</button>
+                        </div>
+                </div>
+                <div class="country">
+                    <table id="customers">
+                        <tr>
+                          <th>Country we offer visa to</th>
+                          <th>Visa fee</th>
+                        </tr>
+                        <tr>
+                            <td>Australia</td>
+                            <td>$1,500</td>
+                        </tr>
+                        </table>
+                        <button onclick="openPopup()">click to pay</button>
+                        <div id="overlay"></div>
+
+                        <div id="popup">
+                          <p>Select method of payment</p>
+                          
+                          <button id="okButton" onclick="closePopup()">OK</button>
+                          <button id="cancelButton" onclick="closePopup()">Cancel</button>
+                        </div>
+                </div>
+                <div class="country">
+                    <table id="customers">
+                        <tr>
+                          <th>Country we offer visa to</th>
+                          <th>Visa fee</th>
+                        </tr>
+                        <tr>
+                            <td>New Zealand</td>
+                            <td> $1,450</td>
+                        </tr>
+                        </table>
+                        <button onclick="openPopup()">click to pay</button>
+                        <div id="overlay"></div>
+
+                        <div id="popup">
+                          <p>Select method of payment</p>
+                          
+                          <button id="okButton" onclick="closePopup()">OK</button>
+                          <button id="cancelButton" onclick="closePopup()">Cancel</button>
+                        </div>
+                </div>
+                <div class="country">
+                    <table id="customers">
+                        <tr>
+                          <th>Country we offer visa to</th>
+                          <th>Visa fee</th>
+                        </tr>
+                        <tr>
+                            <td>Luxembourg</td>
+                        <td> $1,200</td>
+                        </tr>
+                        </table>
+                        <button onclick="openPopup()">click to pay</button>
+                        <div id="overlay"></div>
+
+                        <div id="popup">
+                          <p>Select method of payment</p>
+                          
+                          <button id="okButton" onclick="closePopup()">OK</button>
+                          <button id="cancelButton" onclick="closePopup()">Cancel</button>
+                        </div>
+                </div>
+            </div>
+           
+            <div class="payment-proof">
+                <h3>upload payment Receipt</h3>
+                <form>
+                    <label for="lname">Upload Receipt</label>
+                    <input type="file" id="lname" name="lastname" placeholder="Your last name.."><br>
+                </form>
+            </div>
+        </div>
+        
+
+
+        <script src="/js/userDasbord.js"></script>
+</body>
+
+</html>

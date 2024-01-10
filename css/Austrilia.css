@@ -1,0 +1,375 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.floating-contact {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color:#f12a01;
+}
+
+.floating-contact a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: #1c2542;
+    display: flex;
+    justify-content: space-around;
+}
+
+.scrolled {
+    position: sticky;
+    top: 0%;
+    background-color:#f12a01;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.ham {
+  display: none;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  display: block;
+  width: 35px;
+  height: 2px;
+  margin: 5px auto;
+  background-color: black;
+  transition: 0.4s;
+  position: relative;
+  top: 0px;
+}
+.closebtn {
+  display: none;
+  color: black;
+  font-size: 40px;
+  cursor: pointer;
+  position: relative;
+  left: 50px;
+
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+.logo img {
+    height: 70px;
+}
+
+ul {
+    margin-top: 10px;
+    display: flex;
+}
+
+ul li {
+    list-style: none;
+    margin: 10px;
+    font-weight: 800;
+}
+
+ul a {
+    text-decoration: none;
+    color: white;
+}
+#Apply {
+    border: 2px solid white;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.dropbtn {
+    background-color: #1c2542;
+    color: white;
+    padding: 20px;
+    font-weight: 800;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  .scrolled .dropbtn {
+    background-color: #f12a01;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+/* SECTION */
+
+.bg-section {
+    background-image: url(/img/2022_02_22_122819_1645545873._large.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: rgba(9, 29, 62, 0.63);
+    height: 50vh;
+}
+.content {
+  /* background-color: red; */
+  position: relative;
+  color: white;
+  top: 200px;
+  text-align: center;
+}
+.content h1 {
+  font-size: 30px;
+}
+.content a {
+  text-decoration: none;
+  color: #f12a01;
+}
+/* SECOND- SECTION */
+
+.bg2-section {
+  display: flex;
+  flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.contries {
+  background-color: #818181;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.contries:hover {
+  background-color: #f12a01;
+  cursor: pointer;
+}
+.sideBar {
+ background-image: url(/img/sideber.jpg);
+ background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+.lover {
+  display: flex;
+  justify-content: center;
+}
+.write-ups {
+  max-width: 700px;
+  /* width: 400px; */
+  /* background-color: blue; */
+
+}
+.write-ups i {
+  color: #f12a01;
+  font-size: 30px;
+  margin: 10px;
+}
+.chevron span {
+  font-size: 15px;
+  color: grey;
+}
+
+.box-div {
+  width: 400px;
+  /* height: 500px; */
+  margin: 10px;
+  /* background-color: #f12a01; */
+}
+#bg-dark {
+  width: 600px;
+  background-image: url(/img/tofel.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-blend-mode: multiply;
+  background-color: rgba(9, 29, 62, 0.63); */
+}
+.box-div img {
+  height: 300px;
+}
+  /* FOOTER */
+
+  footer {
+    background-color: #1c2542;
+  }
+  .footer-cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+  .footer-box {
+    color: rgb(204, 198, 198);
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    /* height: 300px; */
+    /* background-color: yellow; */
+  }
+  .footer-box p {
+    font-size: 15px;
+    padding-top: 10px;
+  }
+  .footer-box img {
+    height: 100px;
+  }
+  .foot {
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+  }
+  .foot  a {
+    text-decoration: none;
+    color: #f12a01;
+  }
+  .foot-box {
+    /* background-color: red; */
+    width: 300px;
+    margin: 10px;
+  }
+  .horiz-div {
+    display: grid;
+    justify-content: center;
+  }
+  .hron {
+    width: 400px;
+    height: 1px;
+    background-color: #f1f1f1;
+  }
+  footer input[type=email], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    color: white;
+    display: inline-block;
+    border: 1px solid #f12a01;
+    border-radius: 4px;
+    background-color: #1c2542;
+    box-sizing: border-box;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .ham {
+        display: block;
+        padding: 2px;
+        cursor: pointer;
+        position: relative;
+        top: 20px;
+    }
+    nav {
+        z-index: 2;
+        display: none;
+        height: 100vh;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 0%;
+        color: white;
+        left: 0%;
+        width: 70%;
+        padding: 50px;
+        transition: all 0.6s ease-in-out; 
+    }
+    .normal-contanct {
+        display: none;
+    }
+    .socials {
+        display: none;
+    }
+    .closebtn {
+        display: block;
+        color: black;
+        font-size: 40px;
+        cursor: pointer;
+        position: relative;
+        left: 50px;
+    
+    }
+    .write-ups {
+      max-width: 300px;
+      /* width: 400px; */
+      /* background-color: blue; */
+    
+    }
+}

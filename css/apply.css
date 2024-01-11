@@ -284,8 +284,8 @@ nav {
 .create {
   /* height: 500px; */
   border-radius: 10px;
-  padding: 10px;
-  width: 400px;
+  padding: 5px;
+  width: 500px;
 }
 }
 @media only screen and (max-width: 450px) {
@@ -293,7 +293,16 @@ nav {
     height: 300px;
     border-radius: 10px;
     padding: 10px;
-    width: 500px;
+    width: 300px;
+  }
+  .box {
+    padding: 0px;
+    padding-bottom: 200px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    top: 120px;
   }
 }
 

@@ -153,6 +153,7 @@ button {
   padding: 30px;
   /* height: 300px; */
   border-radius: 10px;
+  margin-bottom: 100px;
 }
 
 
@@ -263,8 +264,7 @@ header h1 {
   color: white;
   cursor: pointer;
   border-radius: 3px;
-  position: relative;
-  top: 5px;
+    margin-top: 50px;
 }
 .copyIcon-one {
   background-color: #4caf50;
@@ -294,14 +294,15 @@ header h1 {
   cursor: pointer;
   border-radius: 3px;
 }
-.payment-content {
-  /* margin: 10px; */
-  /* background-color: red; */
-}
+
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+  .payment-content {
+    margin: 2px;
+    /* background-color: red; */
+  }
   
 }
 .diplay {
@@ -374,7 +375,54 @@ header h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     z-index: 1;
   }
-  .copyIcon {
+  /* .copyIcon {
     margin: 30px;
+  } */
+  .payment-content {
+    margin: 20px;
+    /* background-color: red; */
+  }
+  .copyIcon {
+    background-color: #4caf50;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+      position: relative;
+      top: 10px;
+  }
+  .copyIcon-one {
+    background-color: #4caf50;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .copyIcon-two {
+    background-color: #4caf50;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    position: relative;
+      top: 10px;
+  }
+  .copyIcon-three {
+    background-color: #4caf50;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    position: relative;
+      top: 10px;
+  }
+  .copyIcon-four {
+    background-color: #4caf50;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    position: relative;
+      top: 10px;
   }
 }

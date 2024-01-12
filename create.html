@@ -179,48 +179,58 @@
         </div>
     </footer>
 
-    <script type="text/javascript">
-        document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-    
-            let formData = new FormData(event.target);
-    
-            // Form validation
-            if (!formData.get('firstname')) {
-                alert('First name is required');
-                return;
-            }
-    
-            fetch('https://invest-zg7a.onrender.com/user/signup', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(data);
-                // Store the JWT in local storage
-                localStorage.setItem('jwt', data.token);
-                // If the form is successfully submitted, redirect to apply.html
-                window.location.href = '/apply.html';
-            })
-            .catch((error) => {
-              console.error('Error:', error);
-              alert('There was a problem with the signup request. Please try again later.');
-            });
-        });
-    
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement(
-                { pageLanguage: 'en' },
-                'google_translate_element'
-            );
+ <!-- Add this somewhere in your HTML -->
+<div id="loading" style="display: none;">Loading...</div>
+
+<script type="text/javascript">
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let formData = new FormData(event.target);
+
+        // Form validation
+        if (!formData.get('firstname')) {
+            alert('First name is required');
+            return;
         }
-    </script>
+
+        // Show loading indicator
+        document.getElementById('loading').style.display = 'block';
+
+        fetch('https://invest-zg7a.onrender.com/user/signup', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            // Store the JWT in local storage
+            localStorage.setItem('jwt', data.token);
+            // If the form is successfully submitted, redirect to apply.html
+            window.location.href = '/apply.html';
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('There was a problem with the signup request. Please try again later.');
+        })
+        .finally(() => {
+          // Hide loading indicator
+          document.getElementById('loading').style.display = 'none';
+        });
+    });
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            { pageLanguage: 'en' },
+            'google_translate_element'
+        );
+    }
+</script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
 cb=googleTranslateElementInit">
 </script>

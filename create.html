@@ -186,50 +186,35 @@
     document.querySelector('form').addEventListener('submit', function(event) {
         event.preventDefault();
     
-        // Form validation
         let formElements = event.target.elements;
+        let formData = new FormData();
         for (let i = 0; i < formElements.length; i++) {
-            // Skip submit button
-            if (formElements[i].type !== 'submit' && !formElements[i].value.trim()) {
-                alert('Please fill all the fields');
-                return;
+            if (formElements[i].type !== 'submit') {
+                if (formElements[i].type === 'file') {
+                    if (formElements[i].files.length > 0) {
+                        formData.append(formElements[i].name, formElements[i].files[0]);
+                    }
+                } else {
+                    formData.append(formElements[i].name, formElements[i].value);
+                }
             }
         }
-    
-        let formData = new FormData(event.target);
-        let jsonObject = {};
-    
-        for (const [key, value]  of formData.entries()) {
-            if (!(value instanceof File)) {
-                jsonObject[key] = value;
-                formData.delete(key);
-            }
-        }
-    
-        // Append the JSON data to formData as a string
-        formData.append('json', JSON.stringify(jsonObject));
-    
-        // Log form data
-        for (let pair of formData.entries()) {
-            console.log(pair[0]+ ', '+ pair[1]);
-        }
-    
-        // Show loading indicator
-        document.getElementById('loading').style.display = 'block';
-    
+        
         fetch('https://invest-zg7a.onrender.com/user/signup', {
             method: 'POST',
             body: formData,
         })
         .then(function (response) {
+            if (!response.ok) {
+                return response.text().then(text => {
+                    let error = new Error('Server responded with status ' + response.status);
+                    error.response = text;
+                    throw error;
+                });
+            }
+        
             // Parse the JSON response body
             return response.json();
-        })
-        .then(function (data) {
-            // handle success
-            console.log(data);
-            localStorage.setItem('jwt', data.token);
-            window.location.href = '/apply.html';
         })
         .catch(function (error) {
             // handle error
@@ -239,19 +224,15 @@
             } else {
                 alert('There was a problem with the signup request: ' + error.message);
             }
+            console.log('Response text:', error.response);
         })
         .finally(() => {
             // Hide loading indicator
             document.getElementById('loading').style.display = 'none';
         });
     });
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-            { pageLanguage: 'en' },
-            'google_translate_element'
-        );
-    }
 </script>
+
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
 cb=googleTranslateElementInit">
 </script>

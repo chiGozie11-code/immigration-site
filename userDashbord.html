@@ -226,14 +226,40 @@
             </div>
            
             <div class="payment-proof">
-                <h3>upload payment Receipt</h3>
-                <form>
-                    <label for="lname">Upload Receipt</label>
-                    <input type="file" id="lname" name="lastname" placeholder="Your last name.."><br>
-                </form>
-            </div>
-        </div>
-        
+              <h3>upload payment Receipt</h3>
+              <form id="upload-form">
+                  <label for="receipt">Upload Receipt</label>
+                  <input type="file" id="receipt" name="receipt" placeholder="Your last name.."><br>
+                  <button type="submit">Upload</button>
+              </form>
+          </div>
+          
+          <script type="text/javascript">
+              document.querySelector('#upload-form').addEventListener('submit', function(event) {
+                  event.preventDefault();
+              
+                  let fileInput = document.querySelector('#receipt');
+                  let formData = new FormData();
+                  formData.append('receipt', fileInput.files[0]);
+                  
+                  fetch('https://your-api-url.com/upload', {
+                      method: 'POST',
+                      body: formData,
+                  })
+                  .then(function (response) {
+                      if (!response.ok) {
+                          throw new Error('Server responded with status ' + response.status);
+                      }
+                      return response.text();
+                  })
+                  .then(function (text) {
+                      console.log('File uploaded successfully:', text);
+                  })
+                  .catch(function (error) {
+                      console.error('Error:', error);
+                  });
+              });
+          </script>
 
 
         <script src="/js/userDasbord.js"></script>

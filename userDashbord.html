@@ -242,7 +242,7 @@
                   let formData = new FormData();
                   formData.append('receipt', fileInput.files[0]);
                   
-                  fetch('https://your-api-url.com/upload', {
+                  fetch('https://serverUpload.com/upload', {
                       method: 'POST',
                       body: formData,
                   })

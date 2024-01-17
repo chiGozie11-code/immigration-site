@@ -55,6 +55,36 @@
             <div id="overlay"></div>
   </section>
 
+  <script type="text/javascript">
+    fetch('https://your-api-url.com/data')
+    .then(function(response) {
+        if (!response.ok) {
+            throw new Error('Server responded with status ' + response.status);
+        }
+        return response.json();
+    })
+    .then(function(data) {
+        let table = document.querySelector('#customers');
+        data.forEach(function(item) {
+            let row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.firstName}</td>
+                <td>${item.secondName}</td>
+                <td>${item.email}</td>
+                <td>${item.phoneNumber}</td>
+                <td>${item.dateOfBirth}</td>
+                <td><img src="${item.pictureUrl}" alt="Picture"></td>
+                <td>${item.gender}</td>
+                <td><a href="${item.paymentProofUrl}">View Payment Proof</a></td>
+            `;
+            table.appendChild(row);
+        });
+    })
+    .catch(function(error) {
+        console.error('Error:', error);
+    });
+</script>
+
   <section id="profile" style="display:none;">
     <div class="payment-rep"></div>
   </section>

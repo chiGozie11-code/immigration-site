@@ -159,17 +159,56 @@
 </footer>
    
 
+<!-- Add this somewhere in your HTML -->
+<div id="loading" style="display: none;">Loading...</div>
+
 <script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-            { pageLanguage: 'en' },
-            'google_translate_element'
-        );
-    }
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let formData = new FormData(event.target);
+
+        // Form validation
+        if (!formData.get('username') || !formData.get('password')) {
+            alert('Username and password are required');
+            return;
+        }
+
+        // Show loading indicator
+        document.getElementById('loading').style.display = 'block';
+
+        fetch('https://invest-zg7a.onrender.com/user/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username: formData.get('username'),
+                password: formData.get('password'),
+            }),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            // Store the JWT in local storage
+            localStorage.setItem('jwt', data.token);
+            // If the form is successfully submitted, redirect to userDashboard.html
+            window.location.href = '/userDashboard.html';
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('There was a problem with the login request. Please try again later.');
+        })
+        .finally(() => {
+          // Hide loading indicator
+          document.getElementById('loading').style.display = 'none';
+        });
+    });
 </script>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
-cb=googleTranslateElementInit">
-</script>
-   <script src="/js/apply.js"></script> 
 </body>
 </html>

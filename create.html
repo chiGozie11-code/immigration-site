@@ -101,50 +101,39 @@
             <div class="create">
                 <h1>Create Account</h1>
                 <form>
-                    <label for="fname">First Name:</label>
-                    <input type="text" id="fname" name="firstname" placeholder="First name.."><br>
-                    <label for="fname">Second Name:</label>
-                    <input type="text" id="fname" name="firstname" placeholder="Second name.."><br>
-                    <label for="fname">User:</label>
-                    <input type="text" id="fname" name="firstname" placeholder="User Name.."><br>
-                    <label for="lname">E-mail</label>
-                    <input type="email" id="lname" name="lastname" placeholder="Your E-mail"><br>
-    
-                    <label for="lname">Password</label>
-                    <input type="password" id="lname" name="lastname" placeholder="Enter password"><br>
-                    <label for="lname"> Confirm Password</label>
-                    <input type="password" id="lname" name="lastname" placeholder="Re-Eneter password">
-                    <label for="lname">Upload picture</label>
-                    <input type="file" id="lname" name="lastname" placeholder="Your last name.."><br>
-                    <label for="lname">Phone Number</label>
-                    <input type="text" id="lname" name="lastname" placeholder="Your phone Number..">
-    
-                    <label for="birthday">Date of birth:</label>
-                    <input type="date" id="date-of-birth" name="birthday"><br>
-                    <label for="Gender">Gender</label>
-                    <select id="Gender" name="gender">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                    <label for="firstname">First Name:</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="First name.."><br>
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Last name.."><br>
+                    <label for="username">User:</label>
+                    <input type="text" id="username" name="username" placeholder="User Name.."><br>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Your E-mail"><br>
+            
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password"><br>
+                    <label for="confirmpassword"> Confirm Password</label>
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                    <label for="profilePicture">Upload picture</label>
+                    <input type="file" id="profilePicture" name="profilePicture" placeholder="Upload picture.."><br>
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" placeholder="Your phone Number..">
+            
+                    <label for="date_of_birth">Date of birth:</label>
+                    <input type="date" id="date_of_birth" name="date_of_birth"><br>
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
                     </select>
-                    
-    
-                    
+            
                     <input type="submit" value="Submit">
-                    
                 </form>
                 <span>or <a href="/apply.html">Sign Up</a></span>
             </div>
         </div>
-    
-     </div>
-
-
-
-
-
-
-
-
+    </div>
 
     
     <footer>
@@ -190,17 +179,83 @@
         </div>
     </footer>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement(
-                { pageLanguage: 'en' },
-                'google_translate_element'
-            );
+ <!-- Add this somewhere in your HTML -->
+<div id="loading" style="display: none;">Loading...</div>
+
+<script type="text/javascript">
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        // Form validation
+        let formElements = event.target.elements;
+        for (let i = 0; i < formElements.length; i++) {
+            // Skip submit button
+            if (formElements[i].type !== 'submit' && !formElements[i].value.trim()) {
+                alert('Please fill all the fields');
+                return;
+            }
         }
-    </script>
+    
+        let formData = new FormData(event.target);
+        let jsonObject = {};
+    
+        for (const [key, value]  of formData.entries()) {
+            if (!(value instanceof File)) {
+                jsonObject[key] = value;
+                formData.delete(key);
+            }
+        }
+    
+        // Append the JSON data to formData as a string
+        formData.append('json', JSON.stringify(jsonObject));
+    
+        // Log form data
+        for (let pair of formData.entries()) {
+            console.log(pair[0]+ ', '+ pair[1]);
+        }
+    
+        // Show loading indicator
+        document.getElementById('loading').style.display = 'block';
+    
+        fetch('https://invest-zg7a.onrender.com/user/signup', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(function (response) {
+            // Parse the JSON response body
+            return response.json();
+        })
+        .then(function (data) {
+            // handle success
+            console.log(data);
+            localStorage.setItem('jwt', data.token);
+            window.location.href = '/apply.html';
+        })
+        .catch(function (error) {
+            // handle error
+            console.error('Error:', error);
+            if (error.message === 'secretOrPrivateKey must have a value') {
+                alert('There was a problem with the server. Please try again later.');
+            } else {
+                alert('There was a problem with the signup request: ' + error.message);
+            }
+        })
+        .finally(() => {
+            // Hide loading indicator
+            document.getElementById('loading').style.display = 'none';
+        });
+    });
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            { pageLanguage: 'en' },
+            'google_translate_element'
+        );
+    }
+</script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
 cb=googleTranslateElementInit">
 </script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="/js/create.js"></script>

@@ -28,14 +28,13 @@
             
             <table id="customers">
               <tr>
-                <th>First Name</th>
-                <th>Second Name</th>
+                <th>FirstName</th>
+                <th>LastName</th>
                 <th>Email</th>
                 <th>Phone-number</th>
                 <th>date-of-birth</th>
-                <th>Picture</th>
+                <th>Username</th>
                 <th>Gender</th>
-                <th>payment-proof</th>
               </tr>
               <tr>
                 <td></td>
@@ -44,7 +43,6 @@
                 <td></td>
                 <td></td>
                 <td ></td>
-                <td></td>
                 <td></td>
                 
                 
@@ -56,34 +54,48 @@
   </section>
 
   <script type="text/javascript">
-    fetch('https://serverDisplay.com/data')
-    .then(function(response) {
-        if (!response.ok) {
-            throw new Error('Server responded with status ' + response.status);
-        }
-        return response.json();
+    // Fetch all users from your server
+    fetch('https://invest-zg7a.onrender.com/user/getAllUsers', {
+      method: 'GET',
+      credentials: 'include'
     })
-    .then(function(data) {
-        let table = document.querySelector('#customers');
-        data.forEach(function(item) {
-            let row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${item.firstName}</td>
-                <td>${item.secondName}</td>
-                <td>${item.email}</td>
-                <td>${item.phoneNumber}</td>
-                <td>${item.dateOfBirth}</td>
-                <td><img src="${item.pictureUrl}" alt="Picture"></td>
-                <td>${item.gender}</td>
-                <td><a href="${item.paymentProofUrl}">View Payment Proof</a></td>
-            `;
-            table.appendChild(row);
-        });
+    .then(response => response.json())
+    .then(users => {
+      // Get a reference to the table
+      let table = document.querySelector('#customers');
+  
+      // For each user, add a row to the table
+      users.forEach(user => {
+        console.log(user); // Log the individual user data
+  
+        let row = table.insertRow();
+  
+        let firstnameCell = row.insertCell();
+        firstnameCell.textContent = user.firstname;
+  
+        let lastNameCell = row.insertCell();
+        lastNameCell.textContent = user.lastname;
+  
+        let emailCell = row.insertCell();
+        emailCell.textContent = user.email;
+  
+        let phoneNumberCell = row.insertCell();
+        phoneNumberCell.textContent = user.phone;
+  
+        let dobCell = row.insertCell();
+        dobCell.textContent = user.date_of_birth;
+  
+        let usernameCell = row.insertCell();
+        usernameCell.textContent = user.username;
+  
+        let genderCell = row.insertCell();
+        genderCell.textContent = user.gender;
+      });
     })
-    .catch(function(error) {
-        console.error('Error:', error);
+    .catch((error) => {
+      console.error('Error:', error);
     });
-</script>
+  </script>
 
   <section id="profile" style="display:none;">
     <div class="payment-rep"></div>

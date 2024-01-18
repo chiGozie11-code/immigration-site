@@ -100,7 +100,7 @@
         <div class="box">
             <div class="create">
                 <h1>Create Account</h1>
-                <form>
+                <form id="signup-form">
                     <label for="firstname">First Name:</label>
                     <input type="text" id="firstname" name="firstname" placeholder="First name.."><br>
                     <label for="lastname">Last Name:</label>
@@ -109,16 +109,16 @@
                     <input type="text" id="username" name="username" placeholder="User Name.."><br>
                     <label for="email">E-mail</label>
                     <input type="email" id="email" name="email" placeholder="Your E-mail"><br>
-            
+                
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Enter password"><br>
-                    <label for="confirmpassword"> Confirm Password</label>
-                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-                    <label for="profilePicture">Upload picture</label>
-                    <input type="file" id="profilePicture" name="profilePicture" placeholder="Upload picture.."><br>
+                    <label for="confirm_password"> Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+                    <!-- <label for="profilePicture">Upload picture</label> -->
+                    <!-- <input type="file" id="profilePicture" name="profilePicture" placeholder="Upload picture.."><br> -->
                     <label for="phone">Phone Number</label>
                     <input type="text" id="phone" name="phone" placeholder="Your phone Number..">
-            
+                
                     <label for="date_of_birth">Date of birth:</label>
                     <input type="date" id="date_of_birth" name="date_of_birth"><br>
                     <label for="gender">Gender</label>
@@ -127,7 +127,7 @@
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
                     </select>
-            
+                
                     <input type="submit" value="Submit">
                 </form>
                 <span>or <a href="/apply.html">Sign Up</a></span>
@@ -180,58 +180,55 @@
     </footer>
 
  <!-- Add this somewhere in your HTML -->
+<!-- <div id="loading" style="display: none;">Loading...</div> -->
+
 <div id="loading" style="display: none;">Loading...</div>
+<div id="message" style="display: none;"></div>
 
 <script type="text/javascript">
-    document.querySelector('form').addEventListener('submit', function(event) {
+    document.querySelector('#signup-form').addEventListener('submit', function(event) {
         event.preventDefault();
     
         let formElements = event.target.elements;
-        let formData = new FormData();
+        let formData = {};
         for (let i = 0; i < formElements.length; i++) {
             if (formElements[i].type !== 'submit') {
-                if (formElements[i].type === 'file') {
-                    if (formElements[i].files.length > 0) {
-                        formData.append(formElements[i].name, formElements[i].files[0]);
-                    }
+                if (formElements[i].type === 'select-one') {
+                    formData[formElements[i].name] = formElements[i].options[formElements[i].selectedIndex].value;
                 } else {
-                    formData.append(formElements[i].name, formElements[i].value);
+                    formData[formElements[i].name] = formElements[i].value;
                 }
             }
         }
-        
+    
+        console.log(formData);  // Log formData here
+    
         fetch('https://invest-zg7a.onrender.com/user/signup', {
             method: 'POST',
-            body: formData,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
         })
-        .then(function (response) {
+        .then(response => {
             if (!response.ok) {
-                return response.text().then(text => {
-                    let error = new Error('Server responded with status ' + response.status);
-                    error.response = text;
-                    throw error;
-                });
+                throw new Error('Network response was not ok');
             }
-        
-            // Parse the JSON response body
             return response.json();
         })
-        .catch(function (error) {
-            // handle error
-            console.error('Error:', error);
-            if (error.message === 'secretOrPrivateKey must have a value') {
-                alert('There was a problem with the server. Please try again later.');
-            } else {
-                alert('There was a problem with the signup request: ' + error.message);
-            }
-            console.log('Response text:', error.response);
+        .then(data => {
+            console.log(data);
+            window.location.href = 'apply.html';  // Redirect to apply.html
         })
-        .finally(() => {
-            // Hide loading indicator
-            document.getElementById('loading').style.display = 'none';
+        .catch((error) => {
+            console.error('Error:', error);
         });
     });
 </script>
+
+
+
+<!-- ... rest of your code ... -->
 
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
 cb=googleTranslateElementInit">

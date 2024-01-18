@@ -100,13 +100,13 @@
       <h1>Sign Up</h1>
       <form>
         <label for="fname">User-Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="User-Name">
+        <input type="text" id="username" name="username" placeholder="User-Name">
       
         <label for="lname">Password</label>
-        <input type="password" id="lname" name="lastname" placeholder="Password">
+        <input type="password" id="password" name="password" placeholder="Password">
         
         <input type="submit" value="Submit">
-      </form>
+    </form>
         
         <span>or <a href="/create.html">Create Account</a></span>
     </div>
@@ -166,9 +166,13 @@
         event.preventDefault();
 
         let formData = new FormData(event.target);
+        let formObject = {};
+        for (let [key, value] of formData.entries()) {
+            formObject[key] = value;
+        }
 
         // Form validation
-        if (!formData.get('username') || !formData.get('password')) {
+        if (!formObject.username || !formObject.password) {
             alert('Username and password are required');
             return;
         }
@@ -181,10 +185,7 @@
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                username: formData.get('username'),
-                password: formData.get('password'),
-            }),
+            body: JSON.stringify(formObject),
         })
         .then(response => {
             if (!response.ok) {
@@ -196,8 +197,8 @@
             console.log(data);
             // Store the JWT in local storage
             localStorage.setItem('jwt', data.token);
-            // If the form is successfully submitted, redirect to userDashboard.html
-            window.location.href = '/userDashboard.html';
+            // If the form is successfully submitted, redirect to userDashbord.html
+            window.location.href = 'userDashbord.html';
         })
         .catch((error) => {
           console.error('Error:', error);

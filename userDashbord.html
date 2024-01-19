@@ -241,10 +241,10 @@
               headers: {
                 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTg4NjZkODBlMDcyMWU0NmYyMmZjZSIsInVzZXJuYW1lIjoicXVlZW41OSIsImlhdCI6MTcwNTU1NDUyOSwiZXhwIjoxNzA1NTY1MzI5fQ.7lI9YfAObv3Auz_3FEO-BOv-VCwVlpPVhvkKnH2CXCM'
               },
-              credentials: 'include' // This is required to include the HttpOnly cookie in the request
+              credentials: 'include' 
             })
             .then(response => {
-              console.log(response); // Add this line
+              console.log(response); 
               return response.json();
             })
             .then(data => {

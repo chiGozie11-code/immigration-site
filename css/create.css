@@ -267,16 +267,25 @@ input[type=text], select {
   
 
   @media only screen and (max-width: 768px) {
-    .ham {
-      display: block;
-      padding: 2px;
-      cursor: pointer;
-      position: relative;
-      top: 20px;
-    }
-    .header img {
-      height: 50px;
+    header {
+      width: 100%;
+      position: fixed;
+      z-index: 10;
+      background-color: #1c2542;
+      display: flex;
+      justify-content: space-around;
   }
+  .logo img {
+    height: 40px;
+}
+    .ham {
+        display: block;
+        padding: 2px;
+        cursor: pointer;
+        position: relative;
+        top: 10px;
+    }
+    
   nav {
     z-index: 2;
     display: none;

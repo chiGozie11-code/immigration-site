@@ -10,17 +10,18 @@
 </head>
 <body>
 
-  <header>
+  <header style="position: fixed; width: 100%;">
     <h1>Adim Dashboard</h1>
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="#" onclick="showPage('dashboard')">User details</a>
+      <a href="#" onclick="showPage('profile')">Payment Receipt</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="/index.html">Home</a>
-    <a href="#" onclick="showPage('dashboard')">User details</a>
-    <a href="#" onclick="showPage('profile')">Payment Receipt</a>
-  </nav>
+  
 
-  <section id="dashboard">
+  <section id="dashboard" style="padding-top: 150px;">
     <!-- <h2>Welcome to the Dashboard!</h2>
     <p>This is your personalized dashboard content.</p> -->
     <div class="card" id="payment">

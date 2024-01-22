@@ -13,6 +13,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -22,7 +23,7 @@
             <a href="#"><i class="far fa-envelope"></i></a>
             <a href="#">Support@bookspals.org</a>&nbsp;
             <a href="#"><i class="fas fa-phone-alt"></i></a>
-            <a href="#">+447828274473 </a>
+            <a href="#">+447300433485 </a>
         </div>
         <div class="socials">
             <a href="#"><i class="fab fa-facebook"></i></a>&nbsp;
@@ -45,32 +46,30 @@
             <div class="dropdown">
                 <button class="dropbtn">Country <i class="fa-solid fa-chevron-down"></i></button>
                 <div class="dropdown-content">
-                    <a href="/dubia.html">Canada</a>
-                    <a href="/austrila.html">USA</a>
+                    <a href="#">Canada</a>
+                    <a href="#">USA</a>
                     <a href="#">United Kingdom</a>
-                    <a href="/dubia.html">Dubai</a>
-                    <a href="/austrila.html">Australia</a>
+                    <a href="#">Dubai</a>
+                    <a href="#">Australia</a>
                     <a href="#">New Zealand</a>
                     <a href="#">Luxembourg</a>
                 </div>
             </div>
             <div class="dropdown">
-                <button class="dropbtn">Couching <i class="fa-solid fa-chevron-down"></i></button>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                </ul>
+
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Visa <i class="fa-solid fa-chevron-down"></i></button>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="#">student visa</a>
+                    <a href="#">working visa</a>
+                    <a href="#">vacational visa</a>
                 </div>
             </div>
-           
+
 
             <div class="dropdown">
                 <ul>
@@ -84,8 +83,7 @@
 
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="/austrila.html">About</a>
-            <a href="#service">Services</a>
+            <a href="#about">About</a>
             <a href="#testy">Clients</a>
             <a href="/create.html">Create account</a>
             <a href="/apply.html">Log in</a>
@@ -104,10 +102,10 @@
         <div class="slide-one">
             <div class="item">
                 <h1 class="text-animation" id="trans">Tranform every</h1>
-                 <h1 class="text-animation">immigration & visa consultent Agents</h1>
-                    <button id="slide-button" class="text-animation">
-                        Book An consultent
-                    </button>
+                <h1 class="text-animation">immigration & visa consultent Agents</h1>
+                <button id="slide-button" class="text-animation">
+                    Book An consultent
+                </button>
             </div>
         </div>
         </div>
@@ -136,25 +134,28 @@
     <!-- WRAPPER-ONE -->
     <section class="wrapper-one">
         <div class="box-holder">
-            <div class="box">
+            <div class="box" data-aos="fade-right">
                 <img src="/img/letter.png">
                 <h1>Book An Appointment</h1>
-                <p>Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</p>
+                <p>Our flight booking service is designed with your unique needs in mind. Whether you're a solo
+                    traveler, relocating with family, or planning a group move</p>
             </div>
             <div class="box">
                 <img src="/img/team.png">
                 <h1>
                     Immigration Experts</h1>
-                <p>Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</p>
+                <p>ith a global network of partners, legal experts, and community support, International Immigration
+                    Service is your bridge to a world of opportunities. </p>
             </div>
-            <div class="box">
+            <div class="box" data-aos="fade-left">
                 <img src="/img/open-book.png">
-                <h1>Book An Appointment</h1>
-                <p>Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</p>
+                <h1>study outside</h1>
+                <p>hat's why we provide comprehensive guidance, ensuring you have access to accurate and up-to-date
+                    information at every stage.</p>
             </div>
         </div>
-        <div class="about-serv">
-            <div class="about-box">
+        <div class="about-serv" id="about">
+            <div class="about-box" data-aos="fade-down-right">
                 <!-- <div class="tk-blob" style="--time: 20s; --amount: 5; --fill: #56cbb9 ">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 747.2 726.7">
                               <path d="M539.8 137.6c98.3 69 183.5 124 203 198.4 19.3 74.4-27.1 168.2-93.8 245-66.8 76.8-153.8 136.6-254.2 144.9-100.6 8.2-214.7-35.1-292.7-122.5S-18.1 384.1 7.4 259.8C33 135.6 126.3 19 228.5 2.2c102.1-16.8 213.2 66.3 311.3 135.4z"></path>
@@ -164,10 +165,10 @@
                 <div class="count-up">
                     <h1 id="count"></h1>
                     <span></span>
-                    <h2>visa complet</h2>
+                    <h2>visa completed</h2>
                 </div>
             </div>
-            <div class="about-box">
+            <div class="about-box" data-aos="fade-down-left">
                 <h4>THE BEST VISA PROVIDER</h4>
                 <div class="line-an">
                     <div class="circle-an"></div>
@@ -181,11 +182,10 @@
                     immigration service for you.</p>
                 <div class="chevron"> <i class="fa-regular fa-circle-check"></i> <span>We are committed to providing
                         quality IT Services</span></div>
-                <div class="chevron"> <i class="fa-regular fa-circle-check"></i> <span>We are committed to providing
-                        quality IT Services</span></div>
-                <div class="chevron"> <i class="fa-regular fa-circle-check"></i> <span>We are committed to providing
-                        quality IT Services</span></div>
-                <button id="slide-btn">
+                <div class="chevron"> <i class="fa-regular fa-circle-check"></i> <span>Comprehensive Guidance: </span>
+                </div>
+                <div class="chevron"> <i class="fa-regular fa-circle-check"></i> <span>Multilingual Support</span></div>
+                <button id="slide-btn" style="font-weight: 800; cursor: pointer;">
                     Discover more
                 </button>
 
@@ -194,15 +194,17 @@
     </section>
     <!-- WRAPPER-TWO -->
     <section class="wrapper-two" id="service">
-        <div class="second-boxs ">
+        <div class="second-boxs " data-aos="zoom-in">
             <h2>CHOOSE YOUR VISA</h2>
             <div class="line-an">
                 <div class="circle-an"></div>
             </div>
             <h3>Provide 100% Secure
                 Visa For You</h3>
-            <p>Dolor sit amet consectetur elit sed do eiusmod tempor incididunt labore dolore magna aliqua enim minim
-                veniam.</p>
+            <p style="color: whitesmoke;">Choosing the right visa is the first step towards a new chapter in your life.
+                At International Immigration Service, we are here to empower you with the information and support needed
+                to make the best decision for your future. Explore, decide, and let your journey begin – choose your
+                visa with International Immigration Service today.</p>
             <button id="slide-btn">
                 All service
             </button>
@@ -214,62 +216,68 @@
                         <i class="fa-solid fa-plane"></i>
                         <!-- <div><img src="/img/airplane.png"></div> -->
                         <h1>
-                            Immigration Experts</h1>
-                        <p>Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</p>
+                            Assess Your Goals:</h1>
+                        <p>Determine the purpose of your move – whether it's for work, study, family reunification</p>
                     </div>
                     <div class="small-container">
                         <i class="fa-solid fa-globe"></i>
                         <!-- <img src="/img/airplane.png"> -->
                         <h1>
-                            Immigration Experts</h1>
-                        <p>Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</p>
+                            Explore Categories: </h1>
+                        <p>rowse through our visa categories to understand the options available for your specific goal.
+                        </p>
                     </div>
                     <div class="small-container">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <!-- <img src="/img/airplane.png"> -->
                         <h1>
-                            Immigration Experts</h1>
-                        <p>Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</p>
+                            Consult Our Experts</h1>
+                        <p>Still unsure? Reach out to our experienced immigration consultants for personalized advice
+                        </p>
                     </div>
                 </div>
                 <div class="small-slide-two">
                     <div class="small-container">
                         <i class="fa-solid fa-globe"></i>
                         <h1>
-                            Immigration Experts</h1>
-                        <p>Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</p>
+                            Assess Your Goals:</h1>
+                        <p>Determine the purpose of your move – whether it's for work, study, family reunification</p>
                     </div>
                     <div class="small-container">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <h1>
-                            Immigration Experts</h1>
-                        <p>Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</p>
+                            Consult Our Experts</h1>
+                        <p>Still unsure? Reach out to our experienced immigration consultants for personalized advice
+                        </p>
                     </div>
                     <div class="small-container">
                         <i class="fa-solid fa-plane"></i>
                         <h1>
-                            Immigration Experts</h1>
-                        <p>Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</p>
+                            Explore Categories: </h1>
+                        <p>rowse through our visa categories to understand the options available for your specific goal.
+                        </p>
                     </div>
                 </div>
                 <div class="small-slide-three">
                     <div class="small-container">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <h1>
-                            Immigration Experts</h1>
-                        <p>Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</p>
+                            Consult Our Experts</h1>
+                        <p>Still unsure? Reach out to our experienced immigration consultants for personalized advice
+                        </p>
                     </div>
                     <div class="small-container">
                         <i class="fa-solid fa-plane"></i>
                         <h1>
-                            Immigration Experts</h1>
-                        <p>Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</p>
+                            Assess Your Goals:</h1>
+                        <p>Determine the purpose of your move – whether it's for work, study, family reunification</p>
                     </div>
                     <div class="small-container">
                         <i class="fa-solid fa-globe"></i>
-                        <h1>
-                            Immigration Experts</h1>
-                        <p>Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</p>
+                        <<h1>
+                            Explore Categories: </h1>
+                            <p>rowse through our visa categories to understand the options available for your specific
+                                goal.</p>
                     </div>
                 </div>
             </div>
@@ -318,7 +326,7 @@
             <center class="owl-carousel owl-theme" id="mobile-checker">
                 <div class=" slide-1">
                     <div class="picture-one">
-                        <h1>Dubia</h1>
+
                     </div>
                     <div class="picture-one" id="changeof-pic1"></div>
                     <div class="picture-one" id="changeof-pic2"></div>
@@ -333,19 +341,19 @@
         <div class="country-div" id="smaller-country">
             <center class="owl-carousel owl-theme" id="mobile-checker">
                 <div class=" slide-1">
-                    <div class="picture-one"></div>
+                    <div class="picture-one" data-aos="zoom-out-up"></div>
                 </div>
                 <div class=" slide-2">
-                    <div class="picture-one" id="changeof-pic1"></div>
+                    <div class="picture-one" id="changeof-pic1" data-aos="zoom-out-up"></div>
                 </div>
                 <div class=" slide-3">
-                    <div class="picture-one" id="changeof-pic2"></div>
+                    <div class="picture-one" id="changeof-pic2" data-aos="zoom-out-up"></div>
                 </div>
                 <div class=" slide-4">
-                    <div class="picture-one" id="changeof-pic7"></div>
+                    <div class="picture-one" id="changeof-pic7" data-aos="zoom-out-up"></div>
                 </div>
                 <div class=" slide-5">
-                    <div class="picture-one" id="changeof-pic9"></div>
+                    <div class="picture-one" id="changeof-pic9" data-aos="zoom-out-up"></div>
                 </div>
             </center>
         </div>
@@ -375,23 +383,32 @@
             </div>
         </div> -->
         <div class="testimonial-container">
-            <div class="testimonial">
+            <div class="testimonial" data-aos="flip-left">
                 <img src="/img/photo-1568602471122-7832951cc4c5.avif" alt="Client Avatar" class="avatar">
-                <p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+                <p class="quote">"One of my concerns was navigating the immigration process in a language that wasn't my
+                    first. The multilingual support at International Immigration Service was a game-changer. It made the
+                    entire process not just accessible but truly comfortable. They truly understand and cater to the
+                    diversity of their clientele."
                 </p>
-                <p class="client-info">- John Doe</p>
+                <p class="client-info">— Fatima K., Saudi Arabia to Canada</p>
             </div>
-            <div class="testimonial">
-                <img src="/img/photo-1568602471122-7832951cc4c5.avif" alt="Client Avatar" class="avatar">
-                <p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+            <div class="testimonial" data-aos="flip-up">
+                <img src="/img/team2 (1).jpg" alt="Client Avatar" class="avatar">
+                <p class="quote">"Moving to a new country is a daunting prospect, but International Immigration Service
+                    made it a breeze. From understanding visa requirements to settling into my new home, their support
+                    was invaluable. I can confidently say they played a pivotal role in making my transition seamless
+                    and stress-free."
                 </p>
-                <p class="client-info">- John Doe</p>
+                <p class="client-info">— Sophia L., United Kingdom to Australia</p>
             </div>
-            <div class="testimonial">
-                <img src="/img/photo-1568602471122-7832951cc4c5.avif" alt="Client Avatar" class="avatar">
-                <p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+            <div class="testimonial" data-aos="flip-right">
+                <img src="/img/team1.jpg" alt="Client Avatar" class="avatar">
+                <p class="quote">"As someone venturing into international immigration for the first time, the unknowns
+                    were overwhelming. International Immigration Service not only provided clear and concise information
+                    but also offered genuine support throughout the process. Their commitment to client success is
+                    unmatched."
                 </p>
-                <p class="client-info">- John Doe</p>
+                <p class="client-info">— Emma S., Australia to Canada</p>
             </div>
         </div>
     </section>
@@ -399,7 +416,7 @@
     <section class="wrapper-five">
         <div class="visa-pro">
             <h5>WHY CHOOSE US</h5>
-            <h1>Why VisaPro Immigration?</h1>
+            <h1>Why our Immigration Service?</h1>
             <div class="line-an" id="shifter">
                 <div class="circle-an"></div>
             </div>
@@ -432,7 +449,9 @@
                 <h1>Resources & Latest News</h1>
             </div>
             <div class="resourc-cont">
-                <p>Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, felis lacinia risus interdum auctor id viverra dolor iaculis luctus placerat and massa</p>
+                <p style="font-size: 15px;">global network of partners, legal experts, and community support,
+                    International Immigration Service is your bridge to a world of opportunities. Our collaborative
+                    approach ensures that you are connected to resources that span borders.</p>
             </div>
         </div>
         <div class="blog-news">
@@ -441,24 +460,29 @@
                     <a href="#">working vis</a>
                     <a href="#">working vis</a>
                 </div>
-                <p>Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, felis lacinia risus interdum auctor id viverra dolor iaculis luctus placerat and massa</p>
+                <p>Recognizing the diversity of our clientele, we offer multilingual support to ensure that language is
+                    never a barrier. Your comfort and understanding are our priorities, and our team is ready to assist
+                    you in the language you feel most comfortable with.</p>
                 <button>See more</button>
             </div>
             <div class="newa-cont">
                 <div class="news-bg" id="news-one">
                     <a href="#">student visa</a>
                 </div>
-                <p>Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, felis lacinia risus interdum auctor id viverra dolor iaculis luctus placerat and massa</p>
+                <p>Join us on this exciting adventure, and let us be the catalyst for your global aspirations. Welcome
+                    to a world of opportunities with International Immigration Service.</p>
                 <button>See more</button>
             </div>
             <div class="newa-cont">
                 <div class="news-bg" id="news-two">
                     <a href="#">immigration visa</a>
                 </div>
-                <p>Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, felis lacinia risus interdum auctor id viverra dolor iaculis luctus placerat and massa</p>
+                <p>Embarking on an international immigration journey is a transformative experience, and we are honored
+                    to be your trusted companion. At International Immigration Service, we don't just facilitate
+                    relocation; we empower dreams, connect cultures, and build bridges across borders.</p>
                 <button>See more</button>
             </div>
-            
+
         </div>
     </section>
     <!-- FOOTER -->
@@ -466,23 +490,26 @@
         <div class="footer-cont">
             <div class="footer-box">
                 <a href="#"><img src="/img/immigration-logo.png"></a>
-                <p>Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, felis lacinia risus
-                    interdum</p>
+                <p>International Immigration Service, we are dedicated to facilitating seamless journeys for individuals
+                    and families venturing into the exciting realm of global relocation. </p>
             </div>
             <div class="footer-box">
-                <h2>Immportant Links</h2>
-                <p>Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, felis lacinia</p>
+                <h2>Important Links</h2>
+                <ul style="display: block;">
+                    <li><a href="/apply.html" style="color: red;">login</a></li>
+                    <li><a href="/create.html" style="color: red;">Register</a></li>
+
+                </ul>
             </div>
             <div class="footer-box">
                 <h2>Company Address</h2>
                 <p>Festival court, 200 brand St, Glasgow G51 1DH, United Kingdom.</p>
-                <h3>Address: 25/4, 4th Floor, Panthpath, Dhaka</h3>
-                <h4>Telephone: +330 657 876 33</h4>
+                <h4>Telephone: +447300433485</h4>
                 <h4>Email: example@gmail.com</h4>
             </div>
             <div class="footer-box">
                 <h2>Newsletter</h2>
-                <p>Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, felis lacinia</p>
+                <p>Our commitment to excellence is reflected in our unwavering dedication to your success. </p>
                 <form>
                     <input type="email" placeholder="enter your email">
                 </form>
@@ -494,7 +521,7 @@
             </div>
             <div class="foot">
                 <div class="foot-box">
-                    <p>Copyright © visapro all rights reserved.</p>
+                    <p>© International Immigration Service all rights reserved.</p>
                 </div>
                 <div class="foot-box">
                     <a href="#">About us</a>
@@ -521,6 +548,10 @@ cb=googleTranslateElementInit">
 </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="/js/script.js"></script>
 </body>
 

@@ -11,14 +11,20 @@
 </head>
 
 <body>
+  
   <header>
+    
     <h1 id="welcome-message"> Hi welcome to your Dashboard</h1>
+     <!-- LANGUANGE TRANSLATE -->
     <h2 id="username-display"></h2>
 </header>
     <div class="section">
         <div class="header">
+          <div style="background-color: #4caf50;">
+            <div id="google_translate_element"></div>
+          </div>x`
             <div class="logo">
-                <a href="/index.html"><img src="/img/immigration-logo.png"></a>
+                <!-- <a href="/index.html"><img src="/img/immigration-logo.png"></a> -->
             </div>
             <div class="ham" onclick="openNav()">
                 <span class="bar1"></span>
@@ -28,13 +34,15 @@
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="/index.html">Home</a>
-                <a href="/dubia.html">About</a>
+                <a href="#" id="google_translate_element"></a>
+                 
             </div>
             <div class="nav">
                 <ul>
                     <li>Overview</li>
                     <li id="countrie"><a href="/index.html">home</a></li>
                 </ul>
+                
             </div>
         </div>
         <div class="main-card">
@@ -282,7 +290,17 @@
             });
         </script>
 
-
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+          { pageLanguage: 'en' },
+          'google_translate_element'
+      );
+  }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit">
+</script>
         <script src="/js/userDasbord.js"></script>
 </body>
 

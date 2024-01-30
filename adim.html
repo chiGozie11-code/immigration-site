@@ -10,17 +10,18 @@
 </head>
 <body>
 
-  <header>
+  <header style="position: fixed; width: 100%;">
     <h1>Adim Dashboard</h1>
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="#" onclick="showPage('dashboard')">User details</a>
+      <a href="#" onclick="showPage('profile')">Payment Receipt</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="/index.html">Home</a>
-    <a href="#" onclick="showPage('dashboard')">User details</a>
-    <a href="#" onclick="showPage('profile')">Payment Receipt</a>
-  </nav>
+  
 
-  <section id="dashboard">
+  <section id="dashboard" style="padding-top: 150px;">
     <!-- <h2>Welcome to the Dashboard!</h2>
     <p>This is your personalized dashboard content.</p> -->
     <div class="card" id="payment">
@@ -28,14 +29,13 @@
             
             <table id="customers">
               <tr>
-                <th>First Name</th>
-                <th>Second Name</th>
+                <th>FirstName</th>
+                <th>LastName</th>
                 <th>Email</th>
                 <th>Phone-number</th>
                 <th>date-of-birth</th>
-                <th>Picture</th>
+                <th>Username</th>
                 <th>Gender</th>
-                <th>payment-proof</th>
               </tr>
               <tr>
                 <td></td>
@@ -44,7 +44,6 @@
                 <td></td>
                 <td></td>
                 <td ></td>
-                <td></td>
                 <td></td>
                 
                 
@@ -55,13 +54,68 @@
             <div id="overlay"></div>
   </section>
 
+  <script type="text/javascript">
+    // Fetch all users from your server
+    fetch('http://localhost:9000/user/getAllUsers', {
+      method: 'GET',
+      credentials: 'include'
+    })
+    .then(response => response.json())
+    .then(users => {
+      // Get a reference to the table
+      let table = document.querySelector('#customers');
+  
+      // For each user, add a row to the table
+      users.forEach(user => {
+        console.log(user); // Log the individual user data
+  
+        let row = table.insertRow();
+  
+        let firstnameCell = row.insertCell();
+        firstnameCell.textContent = user.firstname;
+  
+        let lastNameCell = row.insertCell();
+        lastNameCell.textContent = user.lastname;
+  
+        let emailCell = row.insertCell();
+        emailCell.textContent = user.email;
+  
+        let phoneNumberCell = row.insertCell();
+        phoneNumberCell.textContent = user.phone;
+  
+        let dobCell = row.insertCell();
+        dobCell.textContent = user.date_of_birth;
+  
+        let usernameCell = row.insertCell();
+        usernameCell.textContent = user.username;
+  
+        let genderCell = row.insertCell();
+        genderCell.textContent = user.gender;
+      });
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  </script>
+
   <section id="profile" style="display:none;">
-    <div class="payment-rep"></div>
+    <div class="payment-rep">
+      <table id="payment-table">
+        <tr>
+          <th>Receipt</th>
+        </tr>
+        <tr>
+          <td></td> 
+        </tr>
+        
+        
+      </table>
+    </div>
   </section>
 
   
   <footer>
-    &copy; 2024 User Dashboard
+    &copy; 2024 Adim Dashboard
   </footer>
 
   <script>

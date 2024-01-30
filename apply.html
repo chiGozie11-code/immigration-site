@@ -13,9 +13,9 @@
    <div class="floating-contact">
     <div class="normal-contanct">
         <a href="#"><i class="far fa-envelope"></i></a>
-        <a href="#">Support@bookspals.org</a>&nbsp;
+        <a href="#"> support@internationalimmigrationservice.com</a>&nbsp;
         <a href="#"><i class="fas fa-phone-alt"></i></a>
-        <a href="#">+2348033912110 </a>
+        <a href="#">+447300433485 </a>
     </div>
     <div class="socials">
         <a href="#"><i class="fab fa-facebook"></i></a>&nbsp;
@@ -38,29 +38,22 @@
         <div class="dropdown">
             <button class="dropbtn">Country <i class="fa-solid fa-chevron-down"></i></button>
             <div class="dropdown-content">
-                <a href="/dubia.html">Canada</a>
-                <a href="/austrila.html">USA</a>
+                <a href="#">Canada</a>
+                <a href="#">USA</a>
                 <a href="#">United Kingdom</a>
-                <a href="/dubia.html">Dubai</a>
-                <a href="/austrila.html">Australia</a>
+                <a href="#">Dubai</a>
+                <a href="#">Australia</a>
                 <a href="#">New Zealand</a>
                 <a href="#">Luxembourg</a>
             </div>
         </div>
-        <div class="dropdown">
-            <button class="dropbtn">Couching <i class="fa-solid fa-chevron-down"></i></button>
-            <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-        </div>
+        
         <div class="dropdown">
             <button class="dropbtn">Visa <i class="fa-solid fa-chevron-down"></i></button>
             <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a href="#">student visa</a>
+                <a href="#">working visa</a>
+                <a href="#">vacational visa</a>
             </div>
         </div>
        
@@ -100,13 +93,13 @@
       <h1>Sign Up</h1>
       <form>
         <label for="fname">User-Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="User-Name">
+        <input type="text" id="username" name="username" placeholder="User-Name">
       
         <label for="lname">Password</label>
-        <input type="password" id="lname" name="lastname" placeholder="Password">
+        <input type="password" id="password" name="password" placeholder="Password">
         
         <input type="submit" value="Submit">
-      </form>
+    </form>
         
         <span>or <a href="/create.html">Create Account</a></span>
     </div>
@@ -119,23 +112,26 @@
     <div class="footer-cont">
         <div class="footer-box">
             <a href="#"><img src="/img/immigration-logo.png"></a>
-            <p>Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, felis lacinia risus
-                interdum</p>
+            <p>International Immigration Service, we are dedicated to facilitating seamless journeys for individuals
+                and families venturing into the exciting realm of global relocation. </p>
         </div>
         <div class="footer-box">
-            <h2>Immportant Links</h2>
-            <p>Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, felis lacinia</p>
+            <h2>Important Links</h2>
+            <ul style="display: block;">
+                <li><a href="/apply.html" style="color: red;">login</a></li>
+                <li><a href="/create.html" style="color: red;">Register</a></li>
+
+            </ul>
         </div>
         <div class="footer-box">
             <h2>Company Address</h2>
-            <p>Cursus porta, feugiat primis in ultrice ligula risus.</p>
-            <h3>Address: 25/4, 4th Floor, Panthpath, Dhaka</h3>
-            <h4>Telephone: +330 657 876 33</h4>
-            <h4>Email: example@gmail.com</h4>
+            <p>Festival court, 200 brand St, Glasgow G51 1DH, United Kingdom.</p>
+            <p>Telephone: +447300433485</p>
+            <p> support@internationalimmigrationservice.com</p>
         </div>
         <div class="footer-box">
             <h2>Newsletter</h2>
-            <p>Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, felis lacinia</p>
+            <p>Our commitment to excellence is reflected in our unwavering dedication to your success. </p>
             <form>
                 <input type="email" placeholder="enter your email">
             </form>
@@ -143,11 +139,11 @@
     </div>
     <div>
         <div class="horiz-div">
-            <div class="hron"></div>
+            <!-- <div class="hron"></div> -->
         </div>
         <div class="foot">
             <div class="foot-box">
-                <p>Copyright © visapro all rights reserved.</p>
+                <p>© International Immigration Service all rights reserved.</p>
             </div>
             <div class="foot-box">
                 <a href="#">About us</a>
@@ -157,7 +153,74 @@
         </div>
     </div>
 </footer>
+   
 
-   <script src="/js/apply.js"></script> 
+<!-- Add this somewhere in your HTML -->
+<div id="loading" style="display: none;">Loading...</div>
+
+<script type="text/javascript">
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let formData = new FormData(event.target);
+        let formObject = {};
+        for (let [key, value] of formData.entries()) {
+            formObject[key] = value;
+        }
+
+        // Form validation
+        if (!formObject.username || !formObject.password) {
+            alert('Username and password are required');
+            return;
+        }
+
+        // Show loading indicator
+        document.getElementById('loading').style.display = 'block';
+
+        fetch('https://invest-zg7a.onrender.com/user/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formObject),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            // Store the JWT in local storage
+            localStorage.setItem('jwt', data.token);
+            // If the form is successfully submitted, redirect to userDashbord.html
+            window.location.href = 'userDashbord.html';
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('There was a problem with the login request. Please try again later.');
+        })
+        .finally(() => {
+          // Hide loading indicator
+          document.getElementById('loading').style.display = 'none';
+        });
+    });
+
+    
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            { pageLanguage: 'en' },
+            'google_translate_element'
+        );
+    }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit">
+</script>
+<script src="/js/apply.js"></script>
+<script src="//code.tidio.co/irok8mknfqkglwtgolcdabzbvp6youwt.js" async></script>
 </body>
 </html>

@@ -330,6 +330,12 @@ header h1 {
     position: fixed;
     width: 100%;
   }
+  .scrolled {
+    position: sticky;
+    top: 0%;
+    background-color:#f12a01;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
   .main-card {
     position: relative;
     top: 150px;

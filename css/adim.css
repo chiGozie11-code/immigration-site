@@ -32,6 +32,15 @@ nav a {
 section {
   padding: 20px;
 }
+.payment-rep {
+  width: 100%;
+   overflow-x: scroll;
+}
+#profile {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 
 footer {
   background-color: #333;
@@ -43,21 +52,50 @@ footer {
   width: 100%;
 }
 
+.prices {
+  width: 100%;
+   overflow-x: scroll;
+   
+}
+#payment-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+}
+#payment-table th  {
+  border: 2px solid #ddd;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  font-size: 25px;
+  padding: 8px;
+  background-color: red;
+  color: white;
+}
+#payment-table td {
+  height: 400px;
+  width: 400px;
+  border: 2px solid #04AA6D;
+}
+
+@media only screen and (max-width: 768px) { 
+ 
+}
+
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
   }
+  
+  
 }
 
 #customers {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 100%;
 }
 
 #customers td, #customers th {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 5px;
 }
 
 #customers tr:nth-child(even){background-color: #f2f2f2;}
@@ -71,3 +109,10 @@ footer {
   background-color: #04AA6D;
   color: white;
 }
+
+
+
+
+
+
+
